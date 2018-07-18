@@ -105,6 +105,7 @@ public class Activity_StreakBonus extends AppCompatActivity {
                                 for (int j=0;j<arrayListStreakBonus.size();j++){
                                     arrayListStreakBonusValues.add(Integer.parseInt(arrayListStreakBonus.get(j)));
                                 }
+                                Collections.sort(arrayListStreakBonusValues);
                                 sbadapter.notifyDataSetChanged();
                             }else {
                                 JSONObject error = new JSONObject(json.getString("error"));

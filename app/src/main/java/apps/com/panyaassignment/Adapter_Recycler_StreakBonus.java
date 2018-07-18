@@ -45,9 +45,7 @@ public class Adapter_Recycler_StreakBonus extends RecyclerView.Adapter<Adapter_R
 
     @Override
     public Adapter_Recycler_StreakBonus.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-
         view1 = LayoutInflater.from(context).inflate(R.layout.recycleritem_streakbonus,parent,false);
-
         viewHolder1 = new ViewHolder(view1);
 
         return viewHolder1;
@@ -60,12 +58,11 @@ public class Adapter_Recycler_StreakBonus extends RecyclerView.Adapter<Adapter_R
         }else {
             holder.imageViewHearts.setImageResource(R.drawable.ic_streak_heart_l);
         }
-        holder.textView1.setText(arrayListStreakBonus.get(position));
+        holder.textView1.setText(String.valueOf(arrayListStreakBonus.get(position)));
     }
 
     @Override
     public int getItemCount(){
-
         return arrayListStreakBonus.size();
     }
 }
