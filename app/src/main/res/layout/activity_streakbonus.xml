@@ -30,7 +30,9 @@
         android:layout_below="@+id/rl_header"
         android:textColor="@color/colorWhite"
         android:textSize="15dp"
-        android:id="@+id/tv_msg"/>
+        android:gravity="center"
+        android:id="@+id/tv_msg"
+        android:layout_marginTop="10dp"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -38,12 +40,22 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_below="@+id/tv_msg"
-        android:id="@+id/view"/>
+        android:id="@+id/view"
+        android:layout_marginTop="10dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/view"
         android:textColor="@color/colorWhite"
         android:textSize="15dp"
-        android:id="@+id/tv_roundcount" />
+        android:gravity="center"
+        android:id="@+id/tv_roundcount"
+        android:layout_marginTop="10dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:padding="10dp"
+        android:layout_below="@+id/tv_roundcount"/>
 </RelativeLayout>
