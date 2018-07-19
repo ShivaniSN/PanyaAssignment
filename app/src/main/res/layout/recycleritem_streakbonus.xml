@@ -2,25 +2,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/transparent"
+    android:background="@drawable/bg_streak_info_blue"
     android:layout_margin="10dp">
 <LinearLayout
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="50dp"
     android:orientation="horizontal"
-    android:background="@drawable/bg_streak_info_blue"
     android:layout_alignParentLeft="true"
     android:layout_toLeftOf="@+id/iv_hearts"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="5dp"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:layout_centerInParent="true">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/rounded_left_pink"
         android:textColor="@color/colorYellow"
         android:textSize="18dp"
-        android:text="13"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_weight="1"
@@ -29,10 +27,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_streak_info_pink"
         android:textColor="@color/colorYellow"
         android:textSize="18dp"
-        android:text="13"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_weight="1"
@@ -41,10 +37,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_streak_info_pink"
         android:textColor="@color/colorYellow"
         android:textSize="18dp"
-        android:text="13"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_weight="1"
@@ -53,10 +47,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_streak_info_pink"
         android:textColor="@color/colorYellow"
         android:textSize="18dp"
-        android:text="13"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_weight="1"
@@ -65,10 +57,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/rounded_right_pink"
         android:textColor="@color/colorYellow"
         android:textSize="18dp"
-        android:text="13"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_weight="1"

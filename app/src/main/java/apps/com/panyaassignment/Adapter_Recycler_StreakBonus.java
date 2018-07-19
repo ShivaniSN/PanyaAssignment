@@ -1,6 +1,7 @@
 package apps.com.panyaassignment;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +18,7 @@ public class Adapter_Recycler_StreakBonus extends RecyclerView.Adapter<Adapter_R
     Context context;
     View view1;
     ViewHolder viewHolder1;
-    TextView textView;
+    SharedPreferences sharedPreferences;
 
     public Adapter_Recycler_StreakBonus(Context context1,List<Integer> arrayListStreakBonus1){
 
@@ -53,9 +54,29 @@ public class Adapter_Recycler_StreakBonus extends RecyclerView.Adapter<Adapter_R
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position){
-        if (position == arrayListStreakBonus.size()-1) {
+        sharedPreferences = context.getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
+
+        int consecutiveRoundCount = Integer.parseInt(sharedPreferences.getString("consecutive_round_count",""));
+
+        if (((position + 1) * 5) < consecutiveRoundCount){
+            holder.textView1.setBackgroundResource(R.drawable.rounded_left_pink);
+            holder.textView2.setBackgroundResource(R.drawable.bg_streak_info_pink);
+            holder.textView3.setBackgroundResource(R.drawable.bg_streak_info_pink);
+            holder.textView4.setBackgroundResource(R.drawable.bg_streak_info_pink);
+            holder.textView5.setBackgroundResource(R.drawable.rounded_right_pink);
+
+            holder.imageViewHearts.setImageResource(R.drawable.ic_streak_received);
+            holder.imageViewHearts.setBackgroundResource(R.drawable.ic_streak_heart_l_50);
+        }
+        else if (position == arrayListStreakBonus.size()-1) {
             holder.imageViewHearts.setImageResource(R.drawable.ic_streak_chest);
         }else {
+            holder.textView1.setBackgroundResource(R.drawable.rounded_left_blue);
+            holder.textView2.setBackgroundResource(R.color.colorPrimaryTransparent);
+            holder.textView3.setBackgroundResource(R.color.colorPrimaryTransparent);
+            holder.textView4.setBackgroundResource(R.color.colorPrimaryTransparent);
+            holder.textView5.setBackgroundResource(R.drawable.rounded_right_blue);
+
             holder.imageViewHearts.setImageResource(R.drawable.ic_streak_heart_l);
         }
         holder.textView1.setText(String.valueOf(arrayListStreakBonus.get(position)));

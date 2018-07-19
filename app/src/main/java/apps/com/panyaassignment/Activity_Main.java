@@ -1,6 +1,8 @@
 package apps.com.panyaassignment;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +34,7 @@ public class Activity_Main extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]";
     String stringName = "",stringEmail = "",
             stringConsecutiveRoundCount = "",stringAccessToken = "";
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,7 @@ public class Activity_Main extends AppCompatActivity {
         editTextEmail = (EditText)findViewById(R.id.et_email);
         editTextPassword = (EditText)findViewById(R.id.et_pwd);
         buttonRegister = (Button)findViewById(R.id.btn_register);
+        sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +95,10 @@ public class Activity_Main extends AppCompatActivity {
                                 stringAccessToken = data.getString("access_token");
                                 stringConsecutiveRoundCount = data.getString("consecutive_round_count");
                                 stringEmail = data.getString("email");
+
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("consecutive_round_count", data.getString("consecutive_round_count"));
+                                editor.commit();
 
                                 Intent intent = new Intent(Activity_Main.this, Activity_StreakBonus.class);
                                 intent.putExtra("access_token",stringAccessToken);
