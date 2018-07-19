@@ -58,7 +58,7 @@ public class Adapter_Recycler_StreakBonus extends RecyclerView.Adapter<Adapter_R
 
         int consecutiveRoundCount = Integer.parseInt(sharedPreferences.getString("consecutive_round_count",""));
 
-        if (((position + 1) * 5) < consecutiveRoundCount){
+        if (((position + 1) * 5) <= consecutiveRoundCount){
             holder.textView1.setBackgroundResource(R.drawable.rounded_left_pink);
             holder.textView2.setBackgroundResource(R.drawable.bg_streak_info_pink);
             holder.textView3.setBackgroundResource(R.drawable.bg_streak_info_pink);
@@ -69,7 +69,14 @@ public class Adapter_Recycler_StreakBonus extends RecyclerView.Adapter<Adapter_R
             holder.imageViewHearts.setBackgroundResource(R.drawable.ic_streak_heart_l_50);
         }
         else if (position == arrayListStreakBonus.size()-1) {
+            holder.textView1.setBackgroundResource(R.drawable.rounded_left_blue);
+            holder.textView2.setBackgroundResource(R.color.colorPrimaryTransparent);
+            holder.textView3.setBackgroundResource(R.color.colorPrimaryTransparent);
+            holder.textView4.setBackgroundResource(R.color.colorPrimaryTransparent);
+            holder.textView5.setBackgroundResource(R.drawable.rounded_right_blue);
+
             holder.imageViewHearts.setImageResource(R.drawable.ic_streak_chest);
+            holder.imageViewHearts.setBackgroundResource(android.R.color.transparent);
         }else {
             holder.textView1.setBackgroundResource(R.drawable.rounded_left_blue);
             holder.textView2.setBackgroundResource(R.color.colorPrimaryTransparent);
@@ -78,6 +85,7 @@ public class Adapter_Recycler_StreakBonus extends RecyclerView.Adapter<Adapter_R
             holder.textView5.setBackgroundResource(R.drawable.rounded_right_blue);
 
             holder.imageViewHearts.setImageResource(R.drawable.ic_streak_heart_l);
+            holder.imageViewHearts.setBackgroundResource(android.R.color.transparent);
         }
         holder.textView1.setText(String.valueOf(arrayListStreakBonus.get(position)));
     }
